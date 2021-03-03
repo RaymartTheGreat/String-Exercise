@@ -1,33 +1,38 @@
-public static void main(String[] args) {
-        
-        Scanner inputStr = new Scanner(System.in);
-        int occurrence = 0;
-        
-        System.out.print("Enter word: "); //Ask user to input a word
-        String inputWord = inputStr.nextLine();
-        
-        System.out.print("Enter sentence: "); //Ask user to input the sentence
-        String inputSentence = inputStr.nextLine();
+package schoolpractice;
 
-        String str = " ";
+import java.util.Scanner;
+
+public class SchoolPractice {
+
+    public static void main(String[] args) {
         
-        for(char c : inputSentence.toCharArray()) {
+        Scanner input = new Scanner(System.in);
+        int occurrence = 0; //Variable Initialization
+        
+        System.out.print("1. Enter word: ");
+        String inputWord = input.nextLine(); 
+        
+        System.out.print("2. Enter sentence: "); 
+        String inputSentence = input.nextLine();
+
+        String str = " "; 
+        
+        for(char c : inputSentence.toCharArray()) { 
             str += c;
-            if(str.length() == inputWord.length()) {
-                if(str.equals(inputWord)) {
-                 occurrence++;
+            if(str.length() == inputWord.length()) { 
+                if(str.equals(inputWord)) { 
+                 occurrence++; 
                 }
              str = str.substring(1);
             }
         }
-        //Count and search the input word and sentence
+
         if(occurrence > 0){
-            System.out.println("lower index position: " + inputWord.indexOf(inputWord));
-            System.out.println("upper index position: " + occurrence);
+            System.out.println("3. lower index position: " + inputWord.indexOf(inputWord));
+            System.out.println("4. upper index position: " + occurrence);
         }
-        /*If input word is not in the sentence*/
         else {
             System.out.println("The string is not in the sentence!"); 
         }
     }
-   
+}
